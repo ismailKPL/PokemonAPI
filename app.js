@@ -4,11 +4,11 @@ let pokeNumber = document.getElementById("number");
 let pokeName = document.getElementById("name");
 
 
-const changePokemon = async () => { // async pour faire marcher le await
-    let randomNumber = Math.ceil(Math.random() * 150) + 1; // on recupere un pokemon aléatoire entre les 151 premiers
-    // math.ceil() on arrondi le plafond max a 151 au lieu de 150
+const changePokemon = async () => {
+    let randomNumber = Math.ceil(Math.random() * 150) + 1; 
+
     let requestString = `https://pokeapi.co/api/v2/pokemon/${randomNumber}`;
-    let data = await fetch(requestString); // le await = attend que fetch soit charger avant de lire le reste du code
+    let data = await fetch(requestString);
     console.log(data);
 
     let response = await data.json();
